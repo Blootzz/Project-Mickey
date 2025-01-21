@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -40,5 +41,16 @@ public class PlayerMovement : MonoBehaviour
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
             paused = true;
         }
+    }
+
+    public void _CardinalMovement(InputAction.CallbackContext callbackContext)
+    {
+        print("Make cardinal movement here");
+    }
+
+    public void _PressPause(InputAction.CallbackContext callbackContext)
+    {
+        if (callbackContext.started)
+            PauseUnpause();
     }
 }

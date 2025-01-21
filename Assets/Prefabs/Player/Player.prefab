@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3258897108953857124}
   - component: {fileID: 3806374617694060966}
+  - component: {fileID: -8969639354113876676}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -61,8 +62,28 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ce16a4c7-4028-4af1-859e-8206fa8d0bb3
     m_ActionName: Movement/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0e9d325e-0808-473f-bd06-76abedce8d27
+    m_ActionName: Movement/New action
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f9d25cd8-77f3-4f45-9523-baac4c623348
+    m_ActionName: Movement/New action
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Movement
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &-8969639354113876676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7885053719041418630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc6400709c96926459add52f32348c1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
