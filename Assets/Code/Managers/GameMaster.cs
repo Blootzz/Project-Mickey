@@ -11,9 +11,6 @@ public class GameMaster : MonoBehaviour
     // player reference if anyone else wants it
     public PlayerMovement thePlayer;
 
-    // Core stuff
-    public bool paused = false;
-
     // Extra stuff
     public DialogueManager dialogueManager = new DialogueManager();
     public List<GameObject> interactableTargets;
@@ -37,26 +34,5 @@ public class GameMaster : MonoBehaviour
         DontDestroyOnLoad(this);
     }// Create only 1 GameMaster
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            PauseUnpause();
-    }
-
-    void PauseUnpause()
-    {
-        if (paused)
-        {
-            Time.timeScale = 1;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            paused = false;
-        }
-        else
-        {
-            Time.timeScale = 0f;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            paused = true;
-        }
-    }
 
 }// GameMaster
