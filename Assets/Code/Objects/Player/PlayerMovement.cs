@@ -23,8 +23,9 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // create 3d position out of transform + 2d movementInput vector
-        targetPos = new Vector3(transform.position.x + (movementInput.x * moveSpeed * Time.fixedDeltaTime), transform.position.y, transform.position.z + (movementInput.y * moveSpeed * Time.fixedDeltaTime));
+        //targetPos = new Vector3(transform.position.x + (movementInput.x * moveSpeed * Time.fixedDeltaTime), transform.position.y, transform.position.z + (movementInput.y * moveSpeed * Time.fixedDeltaTime));
         targetPos.x = transform.position.x + (movementInput.x * moveSpeed * Time.fixedDeltaTime);
+        targetPos.y = transform.position.y;
         targetPos.z = transform.position.z + (movementInput.y * moveSpeed * Time.fixedDeltaTime);
         rb.MovePosition(targetPos);
     }
