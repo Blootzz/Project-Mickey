@@ -86,7 +86,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Speaker speaker, Dialogue dialogue) // called on continuation of a conversation, not just the start
     {
-        thePlayer.SetControlsEnabled(false, this.gameObject);
+        thePlayer.SetControlMap("Dialogue", this.gameObject);
         HUDAnimator.SetBool("Raised", true); // for some reason, using a trigger system instead of bool causes extra calls to raise up when dialogue finishes
         barsAnimator.SetBool("isOpen", true);
         nameAnimator.SetBool("isUp", true);
@@ -260,7 +260,7 @@ public class DialogueManager : MonoBehaviour
         if (buttonInSelectPosition != null)
             ClearSelectedButton();
 
-        thePlayer.SetControlsEnabled(true, this.gameObject);
+        thePlayer.SetControlMap("Movement", this.gameObject);
         //thePlayer.controlsDisabled = false;
     }
 
