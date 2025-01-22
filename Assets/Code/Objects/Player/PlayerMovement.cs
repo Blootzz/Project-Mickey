@@ -54,7 +54,14 @@ public class PlayerMovement : MonoBehaviour
     public void _CardinalMovement(InputAction.CallbackContext callbackContext)
     {
         if (callbackContext.performed)
+        {
             movementInput = callbackContext.ReadValue<Vector2>();
+            return;
+        }
+        if (callbackContext.canceled)
+        {
+            movementInput = Vector2.zero;
+        }
     }
 
     public void _PressPause(InputAction.CallbackContext callbackContext)
