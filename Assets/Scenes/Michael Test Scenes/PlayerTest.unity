@@ -682,7 +682,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1068326482, guid: 5acc7dda8e18a534e8be8e1369a45733, type: 3}
+  m_Sprite: {fileID: -1925448868, guid: 89d9d2ed1369d3a48b1a69fc09d44a59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1098,8 +1098,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1074855129}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2146756, y: 0.000060912054, z: -0.000013388477, w: 0.9766854}
-  m_LocalPosition: {x: -5.0411325, y: 8.95341, z: -17.218288}
+  m_LocalRotation: {x: 0.21467559, y: -0.000000013523989, z: 0.0000000029725746, w: 0.9766854}
+  m_LocalPosition: {x: -5.0399995, y: 8.95341, z: -17.218288}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1507,6 +1507,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1861095770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661292866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fb6bd06eeeb4c449a82edd723049a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876777641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,7 +1990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1262675511270898939, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0011324883
+      value: 0.00000047683716
       objectReference: {fileID: 0}
     - target: {fileID: 1262675511270898939, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1994,15 +2006,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1262675511270898939, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2146756
+      value: 0.21467559
       objectReference: {fileID: 0}
     - target: {fileID: 1262675511270898939, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000060912054
+      value: -0.000000013523989
       objectReference: {fileID: 0}
     - target: {fileID: 1262675511270898939, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000013388477
+      value: 0.0000000029725746
       objectReference: {fileID: 0}
     - target: {fileID: 3258897108953857124, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2070,6 +2082,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7885053719041418630, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1861095769}
+    - targetCorrespondingSourceObject: {fileID: 7885053719041418630, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1861095770}
   m_SourcePrefab: {fileID: 100100000, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

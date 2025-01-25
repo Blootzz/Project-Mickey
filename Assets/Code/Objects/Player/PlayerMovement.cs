@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     PlayerInput myInput;
     SpriteRenderer sr;
+    Player2DAnimatorManager player2dAnimationManager;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         myInput = GetComponent<PlayerInput>();
         sr = GetComponentInChildren<SpriteRenderer>();
+        player2dAnimationManager = GetComponent<Player2DAnimatorManager>();
     }
 
     void FixedUpdate()
@@ -59,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
     public void _CardinalMovement(InputAction.CallbackContext callbackContext)
     {
+        player2dAnimationManager.ProcessInput(callbackContext.ReadValue<Vector2>());
+
         if (callbackContext.performed)
         {
             movementInput = callbackContext.ReadValue<Vector2>();
