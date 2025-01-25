@@ -672,6 +672,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &661292866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7885053719041418630, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+  m_PrefabInstance: {fileID: 4208086444845748019}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &938954840
 GameObject:
   m_ObjectHideFlags: 0
@@ -1465,6 +1470,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3258897108953857124, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
   m_PrefabInstance: {fileID: 4208086444845748019}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861095771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661292866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991e4c53e156d8b408fdef058de913c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1876777641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,6 +1991,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3806374617694060966, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1861095771}
+    - target: {fileID: 3806374617694060966, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: _PressPause
+      objectReference: {fileID: 0}
+    - target: {fileID: 3806374617694060966, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7885053719041418630, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1981,7 +2010,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7885053719041418630, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1861095771}
   m_SourcePrefab: {fileID: 100100000, guid: f496b80abc0290c4a8129e32c6403e62, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

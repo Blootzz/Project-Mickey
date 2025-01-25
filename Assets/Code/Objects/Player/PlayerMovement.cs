@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool paused { get; private set; } = false;
     [SerializeField] [Range(0,100)] float moveSpeed = 1f;
     Vector2 movementInput = new Vector2(0, 0); // xy vector for moving in xz space
     Vector3 targetPos;
@@ -43,22 +42,6 @@ public class PlayerMovement : MonoBehaviour
         myInput.SwitchCurrentActionMap(mapName);
     }
 
-    void PauseUnpause()
-    {
-        if (paused)
-        {
-            Time.timeScale = 1;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            paused = false;
-        }
-        else
-        {
-            Time.timeScale = 0f;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            paused = true;
-        }
-    }
-
     public void _CardinalMovement(InputAction.CallbackContext callbackContext)
     {
         player2dAnimationManager.ProcessInput(callbackContext.ReadValue<Vector2>());
@@ -89,11 +72,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void _PressPause(InputAction.CallbackContext callbackContext)
-    {
-        if (callbackContext.started)
-            PauseUnpause();
-    }
 
     public void _Interact(InputAction.CallbackContext callbackContext)
     {
