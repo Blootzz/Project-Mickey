@@ -29,7 +29,7 @@ Shader "Sprites/Custom/SpriteShaderShadow"
         Blend One OneMinusSrcAlpha
 
         CGPROGRAM
-        #pragma surface surf Lambert vertex:vert alphatest:_Cutoff addshadow nofog nolightmap nodynlightmap keepalpha noinstancing
+        #pragma surface surf Lambert vertex:vert alphatest:_Cutoff addshadows nofog nolightmap nodynlightmap keepalpha noinstancing
         #pragma multi_compile_local _ PIXELSNAP_ON
         #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
         #include "UnitySprites.cginc"
