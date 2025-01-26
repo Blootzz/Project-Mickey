@@ -6,24 +6,20 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] [Range(0,100)] float moveSpeed = 1f;
+    [SerializeField] [Range(0, 100)] float moveSpeed = 1f;
     Vector2 movementInput = new Vector2(0, 0); // xy vector for moving in xz space
     Vector3 targetPos;
 
     bool isFacingRight = true; // used to keep track of flipping sprite renderer X. Does not actually drive the flipping action
 
     Rigidbody rb;
-    PlayerInput myInput;
     SpriteRenderer sr;
-    Player2DAnimatorManager player2dAnimationManager;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        myInput = GetComponent<PlayerInput>();
         sr = GetComponentInChildren<SpriteRenderer>();
-        player2dAnimationManager = GetComponent<Player2DAnimatorManager>();
     }
 
     void FixedUpdate()
@@ -36,27 +32,23 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(targetPos);
     }
 
-    public void SetControlMap(string mapName, GameObject callingObject)
+    #region Called by PlayerControls.cs
+    // uses Player Input to set movementInput
+    public void StartMoving(Vector2 input)
     {
-        //print(callingObject.name);
-        myInput.SwitchCurrentActionMap(mapName);
+        movementInput = input;
+        EvaluateSpriteFlip(movementInput.x);
+        return;
     }
-
-    public void _CardinalMovement(InputAction.CallbackContext callbackContext)
+    public void StopMoving()
     {
-        player2dAnimationManager.ProcessInput(callbackContext.ReadValue<Vector2>());
-
-        if (callbackContext.performed)
-        {
-            movementInput = callbackContext.ReadValue<Vector2>();
-            EvaluateSpriteFlip(movementInput.x);
-            return;
-        }
-        if (callbackContext.canceled)
-        {
-            movementInput = Vector2.zero;
-        }
+        movementInput = Vector2.zero;
     }
+    public void DoInteract()
+    {
+        print("Interacting");
+    }
+    #endregion
 
     void EvaluateSpriteFlip(float xInput)
     {
@@ -72,10 +64,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
-    public void _Interact(InputAction.CallbackContext callbackContext)
-    {
-        if (callbackContext.started)
-            print("Interacting");
-    }
 }

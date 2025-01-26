@@ -8,14 +8,11 @@ public class PauseManager : MonoBehaviour
 {
     public bool paused { get; private set; } = false;
 
-    // called by Player Input
-    public void _PressPause(InputAction.CallbackContext callbackContext)
-    {
-        if (callbackContext.started)
-            PauseUnpause();
-    }
-
-    void PauseUnpause()
+    /// <summary>
+    /// Changes Time.timeScale to 0 or 1 and fixedDeltaTime to 0.02 or 0
+    /// </summary>
+    /// <returns>true if this method pauses the game, false if unpausing</returns>
+    public bool PauseUnpause()
     {
         if (paused)
         {
@@ -31,5 +28,7 @@ public class PauseManager : MonoBehaviour
             paused = true;
             SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
         }
+
+        return paused;
     }
 }

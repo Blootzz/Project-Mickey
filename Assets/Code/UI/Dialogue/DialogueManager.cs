@@ -8,7 +8,8 @@ using System;
 [System.Serializable]
 public class DialogueManager : MonoBehaviour
 {
-    public PlayerMovement thePlayer;
+    public PlayerControls playerControls;
+
     Speaker currentSpeaker;
     Dialogue currentDialogue;
     [HideInInspector]
@@ -86,7 +87,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Speaker speaker, Dialogue dialogue) // called on continuation of a conversation, not just the start
     {
-        thePlayer.SetControlMap("Dialogue", this.gameObject);
+        playerControls.SetActionMap("Dialogue", this.gameObject);
         HUDAnimator.SetBool("Raised", true); // for some reason, using a trigger system instead of bool causes extra calls to raise up when dialogue finishes
         barsAnimator.SetBool("isOpen", true);
         nameAnimator.SetBool("isUp", true);
@@ -260,7 +261,8 @@ public class DialogueManager : MonoBehaviour
         if (buttonInSelectPosition != null)
             ClearSelectedButton();
 
-        thePlayer.SetControlMap("Movement", this.gameObject);
+        // if this causes issues, consider a universal temp Action Map in PlayerControls.cs for resuming actions
+        playerControls.SetActionMap("Movement", this.gameObject);
         //thePlayer.controlsDisabled = false;
     }
 
