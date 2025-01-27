@@ -31,4 +31,5 @@ public class PauseManager : MonoBehaviour
 
         return paused;
     }
+
 }

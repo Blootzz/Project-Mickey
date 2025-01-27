@@ -9,7 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Michael Test Scenes/PauseMenu.unity
+    path: Assets/Scenes/Michael Menus/PauseMenu.unity
     guid: 7e79f798d70451340be3549467e62ec9
+  - enabled: 1
+    path: Assets/Scenes/Michael Menus/MainMenu.unity
+    guid: a29001dd95e7f99458069142714899ba
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 475f1e0a5aa647e42859237d81c091b8, type: 2}

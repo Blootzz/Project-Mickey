@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseCanvasManager : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
 
-    // called by PlayerInput
-    public void _EnablePauseMenu(InputAction.CallbackContext callbackContext)
+    // Called by Resume button in pause menu
+    // PauseManager is listening for when this scene unloads in OnSceneUnloaded_CheckUnpause
+    public void _UnloadPauseMenu()
     {
-        pauseMenu.SetActive(true);
+        FindObjectOfType<PlayerControls>().UnpauseByButton();
+    }
+
+    // Called by Quit Button in pause menu
+    public void _QuitToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

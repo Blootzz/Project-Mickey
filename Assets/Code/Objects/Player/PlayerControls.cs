@@ -32,16 +32,28 @@ public class PlayerControls : MonoBehaviour
     {
         if (callbackContext.started)
         {
-            bool pauseResult = pauseManager.PauseUnpause(); // does the pausing here
-            if (pauseResult)
-            {
-                tempPausedActionMap = myInput.currentActionMap.name;
-                SetActionMap("UI", this.gameObject);
-            }
-            else
-                SetActionMap(tempPausedActionMap, this.gameObject);
+            TogglePauseManagerAndMap();
         }
 
+    }
+    /// <summary>
+    /// Used to call pause function without going through Player Input
+    /// </summary>
+    public void UnpauseByButton()
+    {
+        TogglePauseManagerAndMap();
+    }
+
+    void TogglePauseManagerAndMap()
+    {
+        bool pauseResult = pauseManager.PauseUnpause(); // does the pausing here
+        if (pauseResult)
+        {
+            tempPausedActionMap = myInput.currentActionMap.name;
+            SetActionMap("UI", this.gameObject);
+        }
+        else
+            SetActionMap(tempPausedActionMap, this.gameObject);
     }
 
     public void _CardinalMovement(InputAction.CallbackContext callbackContext)
